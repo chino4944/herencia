@@ -1,20 +1,17 @@
 package herenciaej2;
 
+import herenciaej2.entidades.Electrodomestico;
+import herenciaej2.enumeraciones.consumoEnergetico;
+
 public class HerenciaEj2 {
 
     public static void main(String[] args) {
-        
+        Electrodomestico e1 = new Electrodomestico(399.9d, "azul", 'H', 56.2d);
+        e1.comprobarConsumoElectrico(e1.getConsumoEnergetico());
     }
     
 }
 /*
-Crear una superclase llamada Electrodoméstico con los siguientes atributos: precio, color,
-consumo energético (letras entre A y F) y peso.
-Los constructores que se deben implementar son los siguientes:
-• Un constructor vacío.
-• Un constructor con todos los atributos pasados por parámetro.
-Los métodos a implementar son:
-• Métodos getters y setters de todos los atributos.
 • Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
 sino es correcta usara la letra F por defecto. Este método se debe invocar al crear el
 objeto y no será visible.
