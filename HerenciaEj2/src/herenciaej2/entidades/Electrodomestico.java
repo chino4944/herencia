@@ -6,16 +6,16 @@ public class Electrodomestico {
 
     protected Double precio;
     protected String color;
-    protected Character consumoEnergetico;
+    protected Character consumoEnergia;
     protected Double peso;
 
     public Electrodomestico() {
     }
 
-    public Electrodomestico(Double precio, String color, Character consumoEnergetico, Double peso) {
+    public Electrodomestico(Double precio, String color, Character consumoEnergia, Double peso) {
         this.precio = precio;
         this.color = color;
-        this.consumoEnergetico = consumoEnergetico;
+        this.consumoEnergia = consumoEnergia;
         this.peso = peso;
     }
 
@@ -35,12 +35,12 @@ public class Electrodomestico {
         this.color = color;
     }
 
-    public Character getConsumoEnergetico() {
-        return consumoEnergetico;
+    public Character getConsumoEnergia() {
+        return consumoEnergia;
     }
 
-    public void setConsumoEnergetico(Character consumoEnergetico) {
-        this.consumoEnergetico = consumoEnergetico;
+    public void setConsumoEnergia(Character consumoEnergia) {
+        this.consumoEnergia = consumoEnergia;
     }
 
     public Double getPeso() {
@@ -51,10 +51,24 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
-    public void comprobarConsumoElectrico(Character letra){
-        for (consumoEnergetico aux : consumoEnergetico.charValue()) {
-            
+    public void comprobarConsumoElectrico(){
+        switch (consumoEnergia){
+            case 'A':                
+            break;
+            case 'B':                
+            break;
+            case 'C':                
+            break;
+            case 'D':                
+            break;
+            case 'E':                
+            break;
+            default:
+                this.consumoEnergia = 'F';
+                
         }
+        System.out.println(consumoEnergia);
+               
     }
     
     public void comprobarColor(String color){
