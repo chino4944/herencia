@@ -6,8 +6,7 @@ import herenciaej2.enumeraciones.consumoEnergetico;
 public class HerenciaEj2 {
 
     public static void main(String[] args) {
-        Electrodomestico e1 = new Electrodomestico(399.9d, "azul", 'J', 56.2d);
-        e1.comprobarConsumoElectrico();
+        Electrodomestico e1 = new Electrodomestico();
     }
     
 }

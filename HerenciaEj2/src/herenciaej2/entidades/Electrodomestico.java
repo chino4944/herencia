@@ -1,6 +1,7 @@
 package herenciaej2.entidades;
 
 import herenciaej2.enumeraciones.consumoEnergetico;
+import java.util.Scanner;
 
 public class Electrodomestico {
 
@@ -8,15 +9,23 @@ public class Electrodomestico {
     protected String color;
     protected Character consumoEnergia;
     protected Double peso;
+    protected Scanner leer;
 
     public Electrodomestico() {
+        comprobarConsumoElectrico();
+        comprobarColor();
+        leer  = new Scanner(System.in);
     }
 
     public Electrodomestico(Double precio, String color, Character consumoEnergia, Double peso) {
         this.precio = precio;
-        this.color = color;
+        this.color = color.toUpperCase();
         this.consumoEnergia = consumoEnergia;
         this.peso = peso;
+        comprobarConsumoElectrico();
+        comprobarColor();
+        leer  = new Scanner(System.in);
+
     }
 
     public Double getPrecio() {
@@ -32,7 +41,7 @@ public class Electrodomestico {
     }
 
     public void setColor(String color) {
-        this.color = color;
+        this.color = color.toUpperCase();
     }
 
     public Character getConsumoEnergia() {
@@ -52,35 +61,60 @@ public class Electrodomestico {
     }
 
     public void comprobarConsumoElectrico(){
-        switch (consumoEnergia){
-            case 'A':                
-            break;
-            case 'B':                
-            break;
-            case 'C':                
-            break;
-            case 'D':                
-            break;
-            case 'E':                
-            break;
-            default:
-                this.consumoEnergia = 'F';
-                
+        if (consumoEnergia == null) {
+            consumoEnergia = 'F';
+        } else {
+            switch (consumoEnergia) {
+                case 'A':
+                    break;
+                case 'B':
+                    break;
+                case 'C':
+                    break;
+                case 'D':
+                    break;
+                case 'E':
+                    break;
+                default:
+                    this.consumoEnergia = 'F';
+
+            }
         }
-        System.out.println(consumoEnergia);
-               
     }
     
-    public void comprobarColor(String color){
+    public void comprobarColor() {
+        if (color == null) {
+            color = "BLANCO";
+        } else {
+            switch (color) {
+                case "NEGRO":
+                    break;
+                case "ROJO":
+                    break;
+                case "AZUL":
+                    break;
+                case "GRIS":
+                    break;
+                default:
+                    this.color = "BLANCO";
+            }
+        }
+    }
+    
+    public void crearElectrodomestico(){
+      
+        System.out.println("Introduzca por favor el color:");
+        color = leer.nextLine();
+        System.out.println("Introduzca por favor el consumo del electrodomestico");
+        consumoEnergia = leer.nextLine();
         
+    /*protected Double precio;
+    protected Character consumoEnergia;
+    protected Double peso;*/
     }
     
 }
 /*
-• Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
-usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
-blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
-minúsculas. Este método se invocará al crear el objeto y no será visible.
 • Metodo crearElectrodomestico(): le pide la información al usuario y llena el
 electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
 precio se le da un valor base de $1000.
