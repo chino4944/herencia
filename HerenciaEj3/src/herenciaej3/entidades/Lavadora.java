@@ -10,7 +10,7 @@ public class Lavadora extends Electrodomestico {
         super(precio, color, consumoEnergia, peso);
         this.carga = carga;
     }
-
+    
     public int getCarga() {
         return carga;
     }
@@ -27,7 +27,7 @@ public class Lavadora extends Electrodomestico {
     
     public void precioFinal(){
         super.precioFinal();
-        if (carga>30){
+        if (carga>29){
             super.precio += 500;
         }
     }

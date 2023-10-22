@@ -26,7 +26,7 @@ public class Electrodomestico {
         leer  = new Scanner(System.in);
 
     }
-
+    
     public Double getPrecio() {
         return precio;
     }
