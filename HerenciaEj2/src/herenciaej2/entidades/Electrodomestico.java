@@ -17,10 +17,10 @@ public class Electrodomestico {
         leer  = new Scanner(System.in);
     }
 
-    public Electrodomestico(Double precio, String color, Character consumoEnergia, Double peso) {
+    public Electrodomestico(Double precio, String color, String consumoEnergia, Double peso) {
         this.precio = precio;
         this.color = color.toUpperCase();
-        this.consumoEnergia = consumoEnergia;
+        this.consumoEnergia = consumoEnergia.toUpperCase().charAt(0);
         this.peso = peso;
         comprobarConsumoElectrico();
         comprobarColor();
@@ -105,19 +105,57 @@ public class Electrodomestico {
       
         System.out.println("Introduzca por favor el color:");
         color = leer.nextLine();
-        System.out.println("Introduzca por favor el consumo del electrodomestico");
-        consumoEnergia = leer.nextLine();
-        
-    /*protected Double precio;
-    protected Character consumoEnergia;
-    protected Double peso;*/
+        System.out.println("Introduzca por favor el consumo");
+        String aux = leer.nextLine().toUpperCase();
+        consumoEnergia = aux.charAt(0);
+        System.out.println("introduzca el precio");
+        precio = leer.nextDouble();
+        System.out.println("por favor introduzca el peso");
+        peso = leer.nextDouble();
+        comprobarConsumoElectrico();
+        comprobarColor();
     }
     
+    public void precioFinal(){
+        switch (consumoEnergia) {
+            case 'A':
+                precio += 1000;
+                break;
+            case 'B':
+                precio += 800;
+                break;
+            case 'C':
+                precio += 600;
+                break;
+            case 'D':
+                precio += 500;
+                break;
+            case 'E':
+                precio += 300;
+                break;
+            case 'F':
+                precio += 100;
+
+        }
+        
+        if (peso<20){
+            precio += 100; 
+        } else if(peso >19 && peso<50) {
+            precio += 500;
+        } else if(peso >49 && peso<80) {
+            precio += 800;
+        } else if(peso >79) {
+            precio += 1000;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Electrodomestico{" + "precio=" + precio + ", color=" + color + ", consumoEnergia=" + consumoEnergia + ", peso=" + peso + ", leer=" + leer + '}';
+    }
+
 }
 /*
-• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
-electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
-precio se le da un valor base de $1000.
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
 precio. Esta es la lista de precios:
 */
