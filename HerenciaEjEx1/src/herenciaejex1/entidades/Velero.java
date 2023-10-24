@@ -8,7 +8,7 @@ public class Velero extends Barco {
     public Velero() {
     }
 
-    public Velero(Integer numeroMastil, String matricula, Integer eslora, Date anoFabricacion) {
+    public Velero(String matricula, Integer eslora, Date anoFabricacion, Integer numeroMastil) {
         super(matricula, eslora, anoFabricacion);
         this.numeroMastil = numeroMastil;
     }

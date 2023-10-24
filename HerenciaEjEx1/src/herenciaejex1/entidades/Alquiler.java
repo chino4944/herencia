@@ -9,19 +9,19 @@ public class Alquiler {
     private Date fechaDevolucion;
     private Integer posicionMuelle;
     private Barco barco;
-    private Boolean alquilado;
+//    private Boolean alquilado;
 
     public Alquiler() {
     }
 
-    public Alquiler(String nombre, String documento, Date fechaAlquiler, Date fechaDevolucion, Integer posicionMuelle, Barco barco, Boolean alquilado) {
+    public Alquiler(String nombre, String documento, Date fechaAlquiler, Date fechaDevolucion, Integer posicionMuelle, Barco barco /*, Boolean alquilado*/) {
         this.nombre = nombre;
         this.documento = documento;
         this.fechaAlquiler = fechaAlquiler;
         this.fechaDevolucion = fechaDevolucion;
         this.posicionMuelle = posicionMuelle;
         this.barco = barco;
-        this.alquilado = alquilado; 
+//        this.alquilado = alquilado; 
     }
 
     public String getNombre() {
@@ -68,20 +68,17 @@ public class Alquiler {
         return barco;
     }
 
+    public void setBarco(Barco barco) {
+        this.barco = barco;
+    }
+/*    
     public Boolean getAlquilado() {
         return alquilado;
     }
 
     public void setAlquilado(Boolean alquilado) {
         this.alquilado = alquilado;
-    }
-    
-    
-
-    public void setBarco(Barco barco) {
-        this.barco = barco;
-    }
-    
+  }*/  
     
     
 }

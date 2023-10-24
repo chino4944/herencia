@@ -8,8 +8,8 @@ public class Yate extends Motor {
     public Yate() {
     }
 
-    public Yate(Integer numeroCamarote, Integer potenciaCv, String matricula, Integer eslora, Date anoFabricacion) {
-        super(potenciaCv, matricula, eslora, anoFabricacion);
+    public Yate(String matricula, Integer eslora, Date anoFabricacion, Integer potenciaCv, Integer numeroCamarote) {
+        super(matricula, eslora, anoFabricacion, potenciaCv);
         this.numeroCamarote = numeroCamarote;
     }
 
