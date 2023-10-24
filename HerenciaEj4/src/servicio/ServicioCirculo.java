@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class ServicioCirculo {
 
     Scanner leer;
-    Circulo c1;
     
     public ServicioCirculo(){
         leer = new Scanner(System.in);
     }
     
-    public void crearCirculo(){
+    public Circulo crearCirculo(){
+        Circulo c1;
         System.out.println("¿el circulo tiene solo perimetro o radio?");
         double radio;
         double perimetro;
@@ -34,7 +34,7 @@ public class ServicioCirculo {
             radio = leer.nextDouble();
         }
         
-        c1 = new Circulo (perimetro,radio);
+        return new Circulo (perimetro,radio);
     }
     
 }

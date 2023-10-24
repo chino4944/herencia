@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class ServicioRectangulo {
 
     Scanner leer; 
-    Rectangulo r1;
 
     public ServicioRectangulo(){
         leer = new Scanner(System.in);
     }
 
-    public void crearReactangulo(){
+    public Rectangulo crearReactangulo(){
+        Rectangulo r1;
         double base;
         double altura;
         System.out.println("solo tiene un lado!?");
@@ -26,6 +26,6 @@ public class ServicioRectangulo {
             System.out.println("cual es el valor de la altura?");
             altura = leer.nextDouble();
         }
-        r1 = new Rectangulo(base, altura);
+        return new Rectangulo(base, altura);
     }
 }
